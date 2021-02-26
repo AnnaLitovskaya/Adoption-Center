@@ -4,17 +4,7 @@ const { syncAndSeed, db } = require('./db/seed');
 const path = require('path');
 const router = require('./router');
 
-app.get('/', (req, res, next) =>
-  res.sendFile(path.join(__dirname, '/pages/index.html'))
-);
-
-app.get('/families', (req, res, next) =>
-  res.sendFile(path.join(__dirname, '/pages/families.html'))
-);
-
-app.use('/api', router);
-
-app.use('/dist', express.static(path.join(__dirname, 'dist')));
+app.use('/', router);
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
