@@ -5,7 +5,11 @@ const path = require('path');
 const router = require('./router');
 
 app.get('/', (req, res, next) =>
-  res.sendFile(path.join(__dirname, 'index.html'))
+  res.sendFile(path.join(__dirname, '/pages/index.html'))
+);
+
+app.get('/families', (req, res, next) =>
+  res.sendFile(path.join(__dirname, '/pages/families.html'))
 );
 
 app.use('/api', router);

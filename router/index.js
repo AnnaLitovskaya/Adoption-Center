@@ -46,10 +46,10 @@ router.get('/cats/:id', async (req, res, next) => {
   }
 });
 
-router.get('/family', async (req, res, next) => {
+router.get('/family/:id', async (req, res, next) => {
   try {
     res.send(
-      await Family.findAll({
+      await Family.findByPk(req.params.id, {
         include: {
           model: Cat,
         },
