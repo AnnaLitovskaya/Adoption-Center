@@ -1,14 +1,18 @@
 const express = require('express');
 const app = express();
 const { syncAndSeed, db } = require('./db/seed');
+const path = require('path');
+const router = require('./router');
 
-app.get('/', (req, res, next) => {
-  try {
-    res.send(`<h1>sup</h1>`);
-  } catch (ex) {
-    next(ex);
-  }
-});
+app.get('/', (req, res, next) =>
+  res.sendFile(path.join(__dirname, 'index.html'))
+);
+
+app.use('/api', router);
+
+app.use('/dist', express.static(path.join(__dirname, 'dist')));
+
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 const init = async () => {
   try {
