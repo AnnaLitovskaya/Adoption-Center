@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const db = new Sequelize(
-  process.send.DATABASE_URL || 'postgres://localhost/cat_shelter_db',
+  process.env.DATABASE_URL || 'postgres://localhost/cat_shelter_db',
   { logging: false }
 );
 const { DataTypes } = Sequelize;
