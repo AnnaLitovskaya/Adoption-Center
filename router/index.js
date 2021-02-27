@@ -101,7 +101,7 @@ router.get('/cats/:id', async (req, res, next) => {
         <div id='cat'>
           <h3>${cat.name}</h3>
           <a href='/cats/${cat.id}'>
-            <img src="../assets/images/${cat.image}" /></a>
+            <img class='portrait' src="../assets/images/${cat.image}" /></a>
           <div>${cat.sex} <i class="fas fa-paw"></i> ${cat.age}</div>
           <div>
             ${cat.color} <i class="fas fa-paw"></i> ${cat.hairLength}

@@ -1,20 +1,22 @@
 body {
   font-family: verdana;
+  background-image: url('./images/Background.jpg');
+  ba;
 }
 
 img {
   border-radius: 15%;
   float: left;
   width: 100%;
-  height: 100%;
   object-fit: cover;
+  border: white 5px solid;
 }
 
 #cats {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: space-around;
+  align-items: stretch;
 }
 
 li {
@@ -22,6 +24,7 @@ li {
   flex-direction: column;
   align-items: center;
   width: calc(100% / 4 - 20px);
+  justify-content: stretch;
 }
 
 #head {
@@ -33,4 +36,16 @@ li {
   flex-direction: column;
   align-items: center;
   width: calc(100% / 2 - 20px);
+}
+
+.portrait {
+  border-radius: 15%;
+  /* float: inline-start; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ul {
+  padding:0%;
 }
